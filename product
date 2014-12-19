@@ -1,0 +1,175 @@
+<?php
+  session_start();  
+  if($_SESSION['username'] == null) {
+	$_SESSION['username'] = "user";
+	$_SESSION['user'] = "Гость";
+  }
+?>
+
+
+<!DOCTYPE HTML> 
+<html>
+<head>
+<title> Австралія </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="style.css" type="text/css" rel="stylesheet">
+<script src="jquery-2.1.1.min.js"></script>
+<link rel="stylesheet" href="main.css">
+
+
+
+</head>
+<body>
+
+<div id="h5">
+<h5><a href="g1.html"  class="r">Реєстрація на сайті</a></h5>
+<h5><a href="page10.html" class="d"> Дізнатися більше?</a></h5>
+</div>
+
+
+
+
+<div id="LOG">
+
+<div class="TEXT">
+<h1 class="effect">Австралія</h1>
+<br>
+<h4>одна з найрозвинутіших країн, яка не перестає дивувати своєю красою</h4>
+</div>
+
+
+<svg  class="SVG" xmlns="http://www.w3.org/2000/svg"
+width="23.5%" version='1.1' >
+   <polyline points="15,50 20,49 25,48 30,48 35,50 38,52 40,53 42,54 44,56 46,58 49,57 49,50 50,46 51,43 52,40 54,38 55,36 56,35 57,34 58,33 61,32"
+         style="fill:none;stroke:white;stroke-width:6"/>
+   <polyline points="55,100 60,99 65,98 70,98 75,100 78,102 80,104 82,106 84,108 86,110 89,113 91,115 94,117 96,119 98,118 97,112 98,105 99,100 100,95 101,90 103,85 106,80 109,76 112,73"
+         style="fill:none;stroke:white;stroke-width:6"/>
+   <polyline points=" 120,49 125,48 130,48 135,50 138,52 140,53 142,54 144,56 146,58 149,57 149,50 150,46 151,43 152,40 154,38 155,36 156,35 157,34 "
+         style="fill:none;stroke:white;stroke-width:6"/>
+</svg>
+
+
+ 
+<?php
+		
+	if($_SESSION['username'] == "user") {
+	echo'
+
+<div  class="Vhid">
+			<form class="registr" id="form1" method="post" action="login.php" name="log">		
+				<p><label for="name">Логін:&ensp;</label><input class="input input1" type="text" name="logn" required size="20" maxlength="30"></p>
+				<p><label for="password">Пароль:&ensp;</label><input class="input input1" type="password" name="pass"  required size="20" maxlength="15"></p>	
+				<br>
+				<p align="left"><button type="submit" value="submit">Вхід</button> <a href=""></a><span id="SAS1"></span><a id="SAS2" href="sas.html" >САС</a></p>
+			</form>
+		</div>';
+
+	}
+	else {
+		echo '
+		<div class="Vhid">
+		<h3 style="color:white"  > Вітаємо, '.$_SESSION['user'].'!</h3>
+		<br>
+		<form action ="quit.php" method="post">
+			<input type="submit" value="Вихід"
+			<br><br><br>
+		</form>
+		</div>';
+	}
+?>
+
+               
+                <div class="parachute"></div>
+         </div>
+
+
+
+<div id="navigation">
+
+<ul>
+  
+     <li class="C" ><a class="F" href="#">Материк</a>
+	    
+	         <ul class="dropdown">
+			             <li class="G"><a href="#" ></a></li>
+			     <li class= "D"><a class= "A" href="page1.html">Географічне положення</a></li>
+				 	     <li class="G"><a href="#" ></a></li>
+				 <li class= "D"><a class= "E" href="page4.html">Клімат</a></li>
+				 	     <li class="G"><a href="#" ></a></li>
+				 <li class= "D"><a class= "E" href="page7.html">Рельєф</a></li>
+				 		 <li class="G"><a href="#" ></a><li>
+				 <li class= "D"><a class="B"  href="page9.html">Природні ресурси</a></li>
+			 </ul>
+        
+	 </li>
+   
+   
+   
+   
+	 
+	 <li class="C" ><a class="F" href="#">Населення</a>
+	 
+	        <ul class="dropdown">
+			             <li class="G"><a href="#" ></a></li>
+			     <li class= "D"><a class= "A2" href="page2.html">Географічне положення</a></li>
+				 	     <li class="G"><a href="#" ></a></li>
+				 <li class= "D"><a class= "E4" href="page5.html">Культура</a></li>
+				 	     <li class="G"><a href="#" ></a></li>
+				 <li class= "D"><a class= "E2" href="page8.html">Рівень розвитку</a></li>
+			</ul>
+	 
+	 </li>
+	  
+	  
+	 <li class="C" ><a class="F" href="#">Історія</a>
+	 
+	 
+	         <ul class="dropdown">
+			             <li class="G"><a href="#" ></a></li>
+			     <li class= "D"><a class= "A" href="page3.html">Формування материка</a></li>
+				 	     <li class="G"><a href="#" ></a></li>
+				 <li class= "D"><a class= "E3" href="page6.html">Освоєння території</a></li>
+			 </ul>
+	 
+	</li>
+</ul>
+
+</div>
+
+<script type="text/javascript">
+            $(document).ready( function() {
+                var LOG = true;
+                $("h1").on("click", function() {
+                    if (LOG) {
+                        $(".effect").show(function() {
+                            $(this).on("click", function() {
+                                 $(".effect").show(function() {
+                                    $(".parachute").show();
+                                    $(".parachute").animate( {
+                                        top: "-=200px",
+                                        left: "+=300px",
+                                    },6000);
+									$(".parachute").animate( {
+                                        top: "-=100px",
+                                        left: "+=400px",
+                                    },7000);
+									$(".parachute").animate( {
+                                        top: "-=420px",
+                                        left: "+=100px",
+                                    },8000);
+                                    $(".parachute").hide(1);
+                                });
+                                LOG = false;
+                                setTimeout("window.location.reload()",22000)
+                            });
+                        });
+                    }
+                });
+            });	
+        </script>
+		
+		
+		
+
+</body>
+</html>
